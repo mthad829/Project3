@@ -1,0 +1,7 @@
+1;Grown Ups;Denis Dugan;2010;5.9/10;
+2;Superbad;Greg Mottola;2007;7.6/10;
+3;21 JumpStreet;Phil Lord;2012;7.2/10;
+4;The Dictator;Larry Charles;2012;6.4/10;
+5;The Interview;Seth Rogen;2014;6.8/10;
+6;The Hangover;Todd Phillips;2009;7.7/10;
+7;Step Brothers;Adam Mckay;2008;6.9/10;
