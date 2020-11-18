@@ -32,8 +32,8 @@ $movies = readMovies('data/comedy.txt');
   <thead>
   <tr>
     <th class="mdl-data-table__cell--non-numeric"><span style="font-size: 20px;">Movie</th>
-    <th class="mdl-data-table__cell--non-numeric"><span style="font-size: 20px;">Director</th>
-    <th class="mdl-data-table__cell--non-numeric"><span style="font-size: 20px;">Release Date</th>
+    <!-- <th class="mdl-data-table__cell--non-numeric"><span style="font-size: 20px;">Director</th>
+    <th class="mdl-data-table__cell--non-numeric"><span style="font-size: 20px;">Release Date</th> -->
     <th class="mdl-data-table__cell--non-numeric"><span style="font-size: 20px;">Rating</th>
   </tr>
   </thead>
@@ -42,9 +42,9 @@ $movies = readMovies('data/comedy.txt');
 
 foreach ($movies as $mov) {
   
-  echo '<td class="mdl-data-table__cell--non-numeric"><span style="font-size: 30px;"><a href="comedy.php?movie=' . $mov['id'] . '">' . $mov['name'] . '</a></td>';
-  echo '<td class="mdl-data-table__cell--non-numeric"><span style="font-size: 15px;">' . $mov['director'] . '</td>';
-  echo '<td class="mdl-data-table__cell--non-numeric"><span style="font-size: 15px;">' . $mov['release'] . '</td>';
+  echo '<td class="mdl-data-table__cell--non-numeric"><span style="font-size: 30px;"><a href="comedy.php?movie=' . $mov['name'] . '">' . $mov['name'] . '</a></td>';
+  // echo '<td class="mdl-data-table__cell--non-numeric"><span style="font-size: 15px;">' . $mov['director'] . '</td>';
+  // echo '<td class="mdl-data-table__cell--non-numeric"><span style="font-size: 15px;">' . $mov['release'] . '</td>';
   echo '<td class="mdl-data-table__cell--non-numeric"><span style="font-size: 20px;">' . $mov['rating'] . '</td>';
   echo '</tr>';
 }
@@ -67,10 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 <div class="mdl-card__supporting-text">
 
 <?php 
-echo '<h4><img src="images/' . $requestedMovie['id'] . '.jpg" height="300" width="200" alt="Image resize"></h4>';
+ //echo '<h4><img src="images/' . $requestedMovie['id'] . '.jpg" height="300" width="200" alt="Image resize"></h4>';
 echo '<h3>' . '<b>' . $requestedMovie['name'] .'</h3>'; 
-echo '<h4>' . $requestedMovie['release'] . '</h4>'; 
-echo '<h4>' . 'Directed by: ' . $requestedMovie['director'] . '</h4>';
+//echo '<h4>' . $requestedMovie['release'] . '</h4>'; 
+//echo '<h4>' . 'Directed by: ' . $requestedMovie['director'] . '</h4>';
 echo '<br>';
 ?>
 
@@ -83,7 +83,7 @@ echo '<br>';
 </div>
 <div class="mdl-card__supporting-text">
 <?php
-    $reviews = readReviews($_GET['movie'], 'data/comrev.txt');
+    $reviews = readReviews($_GET['movie'], 'data/comedy.txt');
     if (is_null($reviews)) {
       echo 'No reviews for ' . $requestedMovie['name'] . '. Be the first!';
     } else {
